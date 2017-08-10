@@ -1,13 +1,14 @@
 ---
-- name: Backup existing sources.lst file
+- name: Copy existing sources.lst file
   copy:
     src: /etc/apt/sources.list
     dest: /etc/apt/sources.list.osism
     remote_src: yes
+    backup: yes
   ignore_errors: yes
   become: true
 
-- name: Remove existing source.list file
+- name: Remove existing sources.list file
   file:
     path: /etc/apt/sources.list
     state: absent
