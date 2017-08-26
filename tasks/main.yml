@@ -1,19 +1,4 @@
 ---
-- name: Copy existing sources.lst file
-  copy:
-    src: /etc/apt/sources.list
-    dest: /etc/apt/sources.list.osism
-    remote_src: yes
-    backup: yes
-  ignore_errors: yes
-  become: true
-
-- name: Remove existing sources.list file
-  file:
-    path: /etc/apt/sources.list
-    state: absent
-  become: true
-
 - name: Add repository keys
   apt_key:
     url: "{{ item }}"
@@ -22,25 +7,18 @@
   with_items: "{{ repository_keys }}"
 
 # NOTE: not using apt_repository here because it requires python-apt
-- name: Add repositories
-  blockinfile:
-    path: /etc/apt/sources.list
-    block: |
-      {{ item.repository }} {{ item.name }}
-    marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.name }}"
-    create: yes
+- name: Copy source.list file
+  template:
+    src: source.list.j2
+    dest: /etc/apt/sources.list
     owner: root
     group: root
     mode: 0644
+    backup: yes
   become: true
-  with_items: "{{ repositories }}"
 
 - name: Update package cache
-  package:
+  apt:
     update_cache: yes
-  become: true
-
-- name: Upgrade all packages
-  package:
-    upgrade: dist
+    cache_valid_time: 3600
   become: true
