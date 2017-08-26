@@ -1,5 +1,6 @@
 # Ansible osism.repository
 
+[![Build Status](https://travis-ci.org/osism/ansible-repository.svg?branch=master)](https://travis-ci.org/osism/ansible-repository)
 [![Ansible Galaxy](https://img.shields.io/badge/Ansible%20Galaxy-osism.repository-blue.svg)](https://galaxy.ansible.com/osism/repository/)
 ![Ansible 2.2](https://img.shields.io/badge/Ansible-2.2-green.png?style=flat)
 ![Ansible 2.3](https://img.shields.io/badge/Ansible-2.3-green.png?style=flat)
