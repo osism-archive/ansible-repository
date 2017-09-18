@@ -1,7 +1,7 @@
 ---
 repository_keys:
-  - http://repository.osism.io/aptly.pub
+  - http://repository-1.osism.io/aptly.pub
 
 repositories:
   - name: node-osism
-    repository: "deb http://repository.osism.io/node-latest xenial main"
+    repository: "deb http://repository-1.osism.io/node-latest xenial main"
