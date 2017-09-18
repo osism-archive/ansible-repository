@@ -6,7 +6,8 @@
   become: true
   with_items: "{{ repository_keys }}"
 
-# NOTE: not using apt_repository here because it requires python-apt
+# NOTE: Not using apt_repository here because it requires python-apt.
+
 - name: Copy source.list file
   template:
     src: source.list.j2
