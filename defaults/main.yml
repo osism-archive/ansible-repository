@@ -4,4 +4,4 @@ repository_keys:
 
 repositories:
   - name: node-osism
-    repository: "deb http://repository-1.osism.io/node-latest xenial main"
+    repository: "deb [arch=amd64] http://repository-1.osism.io/node-latest xenial main"
