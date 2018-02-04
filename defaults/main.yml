@@ -1,7 +1,15 @@
 ---
 repository_keys:
-  - http://repository-1.osism.io/aptly.pub
+  - https://download.docker.com/linux/ubuntu/gpg
 
 repositories:
-  - name: node-osism
-    repository: "deb [arch=amd64] http://repository-1.osism.io/node-latest xenial main"
+  - name: docker
+    repository: "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+  - name: xenial
+    repository: "deb [arch=amd64] http://de.archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse"
+  - name: xenial-backports
+    repository: "deb [arch=amd64] http://de.archive.ubuntu.com/ubuntu/ xenial-backports main restricted universe multiverse"
+  - name: xenial-security
+    repository: "deb [arch=amd64] http://de.archive.ubuntu.com/ubuntu/ xenial-security main restricted universe multiverse"
+  - name: xenial-updates
+    repository: "deb [arch=amd64] http://de.archive.ubuntu.com/ubuntu/ xenial-updates main restricted universe multiverse"
