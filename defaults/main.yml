@@ -1,4 +1,6 @@
 ---
+repository_cache_valid_time: 120
+
 repository_keys:
   - https://download.docker.com/linux/ubuntu/gpg
 
