@@ -1,0 +1,3 @@
+---
+travis_decrypt_key: 7161553f13bb
+ansible_role_name: repository
