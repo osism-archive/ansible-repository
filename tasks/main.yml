@@ -17,6 +17,7 @@
     mode: 0644
     backup: yes
   become: true
+  notify: Force update of package cache
 
 - name: Update package cache
   apt:
