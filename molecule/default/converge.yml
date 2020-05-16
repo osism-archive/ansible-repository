@@ -4,9 +4,11 @@
 
   vars:
 
-    # NOTE: adapted repositories as there are currently no packages available from Docker/Netdata for Focal
+    # NOTE: adapted repositories as there are currently no packages available from Netdata for Focal
 
     repositories:
+      - name: docker
+        repository: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
       - name: osquery
         repository: "deb [arch=amd64] https://pkg.osquery.io/deb deb main"
       - name: "{{ ansible_distribution_release }}"
