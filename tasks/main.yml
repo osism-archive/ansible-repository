@@ -4,7 +4,7 @@
     url: "{{ item }}"
     state: present
   become: true
-  with_items: "{{ repository_keys }}"
+  loop: "{{ repository_keys }}"
 
 - name: Add repository keys via keyservers
   apt_key:
@@ -12,7 +12,7 @@
     keyserver: "{{ item.value }}"
     state: present
   become: true
-  with_dict: "{{ repository_key_ids }}"
+  loop: "{{ repository_key_ids|dict2items }}"
 
 # NOTE: Not using apt_repository here because it requires python-apt.
 
